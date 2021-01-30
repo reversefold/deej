@@ -1,27 +1,27 @@
-#!/usr/bin/env python
-
-import sys
-import math
-import time
+#!/usr/bin/env python3
 import datetime
+import math
 import os
 import subprocess
-import psutil
+import sys
+import time
+
 
 import infi.systray
+import psutil
 import serial
 import yaml
 
-from pycaw.pycaw import AudioUtilities, IAudioEndpointVolume
-from ctypes import POINTER, pointer, cast
 from comtypes import CLSCTX_ALL, GUID
+from ctypes import POINTER, pointer, cast
+from pycaw.pycaw import AudioUtilities, IAudioEndpointVolume
 from watchdog.events import FileSystemEventHandler
 from watchdog.observers import Observer
 
 
 class Deej(object):
 
-    def __init__(self,):
+    def __init__(self):
         self._config_filename = 'config.yaml'
         self._config_directory = os.path.dirname(os.path.abspath(__file__))
 
@@ -288,8 +288,8 @@ def setup_tray(edit_config_callback, refresh_sessions_callback, stop_callback):
 
 def attempt_print(s):
     try:
-        print s
-    except:
+        print(s)
+    except Exception:
         pass
 
 
